@@ -11,8 +11,12 @@ function onload() {
     document.getElementById(
       "res"
     ).innerHTML = `<i style="color:green" class="display-4">Whoo!!.. Your guess is right</i>`;
+
     document.getElementById("sub").textContent = "Play Again";
-    guess = document.getElementById("guess").disabled = true;
+     sub.addEventListener("click", restart);
+     function restart() {
+       location.reload();
+     }
   } else {
     chance--;
 
@@ -25,19 +29,25 @@ function onload() {
       document.getElementById(
         "res"
       ).innerHTML = `<i style="color:red"  class="display-4">Wrong!! Try Again</i>`;
+       if (chance == 0) {
+         
+         sub.addEventListener("click", restart);
+         function restart() {
+           location.reload();
+         }
+       }
     } else {
+      guess = document.getElementById("guess");
       let reso = document.getElementById("res");
-      document.getElementById('guess').borderColor = "red";
-      document.getElementById("fxn").className = "active-red-3 active-pink-4 ";
-      reso.innerHTML = `<i style="color:red" class="display-4">Wrong!! You left ${chance} chance !!</i>`;
+      // document.getElementById('guess').borderColor = "red";
+      // document.getElementById("fxn").className = "active-red-3 active-pink-4 ";
+      reso.innerHTML = `<i style="color:red" class="display-4">Wrong!! You left ${chance} chance !!</i>`
+      guess.style.border = "red solid";
+     
+     
+      
+      reso.style.color = "red";
+     
     }
-  }
-}
-function again() {
-  if (sub.textContent == "Play Again") {
-    document.getElementById("guess").disabled = false;
-    document.getElementById("sub").textContent = "Submit";
-
-    document.getElementById("res").innerHTML = "";
   }
 }
