@@ -1,0 +1,1 @@
+Hii.. This is a text from the text file, which is accessed by js.
