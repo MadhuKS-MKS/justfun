@@ -37,7 +37,7 @@ function showmore(e) {
         output += `<li>${cust.id}</li>
             <li>${cust.name}</li>
             <li>${cust.age}</li>
-            <li>${cust.phone}</li>
+          
             <li>${cust.email}</li>`;
       });
       document.getElementById("custs").innerHTML = output;
